@@ -1,3 +1,5 @@
+using Application.ClientTrials;
+using Domain.Interfaces;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Binders;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Writers;
@@ -15,6 +17,8 @@ builder.Services.AddDbContext<DataContext>(opt =>
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddMediatR(c => c.RegisterServicesFromAssemblies(typeof(ClinicalTrialList.Handler).Assembly));
+builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 
 var app = builder.Build();
 
