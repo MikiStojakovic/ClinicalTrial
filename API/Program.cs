@@ -1,4 +1,4 @@
-using Application.ClientTrials;
+using Application.ClinicalTrials;
 using Domain.Interfaces;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Binders;
 using Microsoft.EntityFrameworkCore;
