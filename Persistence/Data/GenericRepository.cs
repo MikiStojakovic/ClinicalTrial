@@ -11,6 +11,11 @@ namespace Persistence.Data
             dataContext.Set<T>().Add(entity);
         }
 
+        public void AddRange(List<T> entities)
+        {
+            dataContext.Set<T>().AddRange(entities);
+        }
+
         public async Task<T> GetByIdAsync(int id)
         {
             return await dataContext.Set<T>().FindAsync(id);
@@ -31,7 +36,7 @@ namespace Persistence.Data
             dataContext.Set<T>().Attach(entity);
         }
 
-        public async Task<bool> SaveAllAsync()
+        public async Task<bool> SaveChangesAsync()
         {
             return await dataContext.SaveChangesAsync() > 0;
         }

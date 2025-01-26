@@ -7,8 +7,9 @@ namespace Domain.Interfaces
         Task<T> GetByIdAsync(int id);
         Task<List<T>> ListAllAsync();
         void Add(T entity);
+        void AddRange(List<T> entities);
         void Update(T entity);
         void Remove(T entity);
-        Task<bool> SaveAllAsync();
+        Task<bool> SaveChangesAsync();
     }
 }
