@@ -8,5 +8,6 @@ namespace Domain
         public required int Participants { get; set; }
         public ClinicalTrialStatus Status { get; set; }
         public required int ClinicalTrialStatusId { get; set; }
+        public int TrialDurationInDays { get; set; }
     }
 }
