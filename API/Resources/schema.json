@@ -1,0 +1,11 @@
+{
+    "type": "object",
+    "properties": {
+        "trialId": {"type": "string"},
+        "title": {"type": "string"},
+        "startDate": {"type": "string","format": "date"},
+        "endDate": {"type": "string","format": "date"},
+        "participants": {"type": "integer","minimum": 1},
+        "status": {"type": "string"}
+    }
+}
